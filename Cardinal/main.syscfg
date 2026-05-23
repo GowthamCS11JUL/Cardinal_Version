@@ -32,9 +32,9 @@ const ProjectConfig = scripting.addModule("/ti/project_config/ProjectConfig");
 /**
  * Write custom configuration values to the imported modules.
  */
-GPIO1.$name                          = "LED";
-GPIO1.associatedPins[0].initialValue = "SET";
-GPIO1.associatedPins[0].$name        = "LED_PIN";
+GPIO1.$name                         = "LED";
+GPIO1.associatedPins[0].$name       = "LED_PIN";
+GPIO1.associatedPins[0].pin.$assign = "PA14";
 
 const Board                       = scripting.addModule("/ti/driverlib/Board", {}, false);
 Board.peripheral.$assign          = "DEBUGSS";
@@ -181,6 +181,5 @@ scripting.suppress("Migrating requires going through the Switch Board or Device 
  * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
  * re-solve from scratch.
  */
-GPIO1.associatedPins[0].pin.$suggestSolution = "PB13";
-SPI1.peripheral.$suggestSolution             = "SPI0";
-SPI1.peripheral.cs2Pin.$suggestSolution      = "PB7";
+SPI1.peripheral.$suggestSolution        = "SPI0";
+SPI1.peripheral.cs2Pin.$suggestSolution = "PB7";

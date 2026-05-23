@@ -225,7 +225,7 @@ void ldo_power_on_site_0(uint8_t value)
 
 void power_supply_3v3_1_site_0(void)
 {
-    led_turn_on();
+  
     ldo_power_off_site_0();
 
     uint8_t write_cmd[3] = {0x08, 0xA8, 0xF5};
@@ -236,13 +236,13 @@ void power_supply_3v3_1_site_0(void)
     opamp_en(SLAVE_U16, 0);
 
     data_transmit(return_data);
-    led_turn_off();
+    
 }
 
 
 void power_supply_3v3_2_site_0(void)
 {
-    led_turn_on();
+    
     ldo_power_off_site_0();
 
     uint8_t write_cmd[2] = {0x01, 0x08};
@@ -252,12 +252,12 @@ void power_supply_3v3_2_site_0(void)
     i2c_common(SLAVE_U16, write_cmd, 2, read_cmd, 1);
 
     ldo_power_on_site_0(write_cmd[1]);
-    led_turn_off();
+    
 }
 
 void power_supply_2v7_1_site_0(void)
 {
-    led_turn_on();
+    
     // ldo_power_off_site_0();
 
     uint8_t write_cmd[3] = {0x08, 0x8A, 0x3D};
@@ -268,13 +268,13 @@ void power_supply_2v7_1_site_0(void)
     opamp_en(SLAVE_U16, 0);
 
     data_transmit(return_data);
-    led_turn_off();
+    
 }
 
 void power_supply_2v7_2_site_0(void)
 {
     // ldo_power_off_site_0();
-    led_turn_on();
+    
     uint8_t write_cmd[2] = {0x01, 0x0D};
     uint8_t read_cmd[1]  = {0x01};
 
@@ -283,7 +283,7 @@ void power_supply_2v7_2_site_0(void)
     data_transmit(return_data);
 
     // ldo_power_on_site_0(write_cmd[1]);
-    led_turn_off();
+    
 }
 
 /* =======================
@@ -292,70 +292,61 @@ void power_supply_2v7_2_site_0(void)
 
 void battery_voltage_check_site_0(void)
 {
-    led_turn_on();
+   
     read_mux_adc(0x00, 0x00, 0x00, 0x00, 0x01);
-    led_turn_off();
+    
 }
 
 void switch_voltage_default_site_0(void)
 {
-    led_turn_on();
+    
     read_mux_adc(0x01, 0x00, 0x00, 0x00, 0x01);
-    led_turn_off();
+    
 }
 
 void led_status_voltage_0_0_site_0(void)
 {
-    led_turn_on();
+   
     read_mux_adc(0x02, 0x00, 0x00, 0x00, 0x01);
-    led_turn_off();
+  
 }
 
 void led_status_voltage_0_1_site_0(void)
 {
-    led_turn_on();
+    
     read_mux_adc(0x03, 0x00, 0x00, 0x00, 0x01);
-    led_turn_off();
+    
 }
 
 void led_status_voltage_1_0_site_0(void)
 {
-    led_turn_on();
+  
     read_mux_adc(0x04, 0x00, 0x00, 0x00, 0x01);
-    led_turn_off();
+    
 }
 
 void led_status_voltage_2_0_site_0(void)
 {
-    led_turn_on();
     read_mux_adc(0x05, 0x00, 0x00, 0x00, 0x01);
-    led_turn_off();
 }
 
 void led_status_voltage_1_site_0(void)
 {
-    led_turn_on();
     read_mux_adc(0x06, 0x06, 0x00, 0x00, 0x01);
-    led_turn_off();
 }
 
 void led_status_voltage_2_site_0(void)
 {
-    led_turn_on();
     read_mux_adc(0x07, 0x07, 0x00, 0x00, 0x01);
-    led_turn_off();
 }
 
 void led_status_voltage_3_site_0(void)
 {
-    led_turn_on();
     read_mux_adc(0x08, 0x08, 0x00, 0x00, 0x01);
-    led_turn_off();
 }
 
 void switch_voltage_press_site_0(void)
 {
-    led_turn_on();
     switch_on_select(switch_0);
     // read_mux_adc(0x01, 0x00, 0x00, 0x00, 0x01);
     Delay_Timer_Start(&delay);
@@ -363,62 +354,12 @@ void switch_voltage_press_site_0(void)
     while ((Delay_Timer_Get(&delay) - start) < 210000);
     read_mux_adc(0x01, 0x00, 0x00, 0x00, 0x01);
     switch_off_select(switch_0);
-   led_turn_off();
    
 }
-
-/* =======================
-   CURRENT MEASUREMENT
-======================= */
-
-// void voltage_current_measurement_site_on(void)
-// {
-//     uint8_t write_cmd_1[3]={0x00,0x00,0x10};
-//     uint8_t read_cmd_1[3]={0x00,0x00,0x00};
-//     uint8_t write_cmd_2[3]={0x02,0x11,0x90};
-//     uint8_t read_cmd_2[3]={0x02,0x00,0x00};
-
-//     uint8_t read_cmd[3] = {0x07, 0x00, 0x00};
-//     uint32_t value = 0;
-// //  0x1190
-//     // while (1)
-//     // {
-//     //     value = i2c_common(SLAVE_U7_0, NULL, 0, read_cmd, 3);
-//     //     lastbit=value&0X0000F;
-//     //     value >>= 4;
-
-//     //     // Repeat if value is in invalid range
-//     //     if (lastbit!=0)
-//     //     {
-//     //         continue;
-//     //     }
-
-//     //     // Exit loop when valid value is found
-//     //     data_transmit(value);
-//     //     break;
-//     // }
-
-//     i2c_common(SLAVE_U7_0, write_cmd_1,3, read_cmd_1, 3);
-//     i2c_common(SLAVE_U7_0, write_cmd_2,3, read_cmd_2, 3);
-    
-//    value = i2c_common(SLAVE_U7_0, NULL, 0, read_cmd, 3);
-//     // if(value<=0x000F0)
-//     // {
-//     //     value=0;
-//     // }
-//     // else {
-//     // value=(value>>4)&0XFFFF;
-//     // }
-//      value=(value>>4)&0XFFFF;
-//      data_transmit(value);
-
-//     // Now 'value' contains valid data
-// }
-
+ 
 void voltage_current_measurement_site_on(void)
 {
     
-    led_turn_on();
     // uint8_t write_cmd_1[3] = {0x00, 0x00, 0x10};  // CONFIG (ADCRANGE=0)
     // uint8_t write_cmd_2[3] = {0x02, 0x11, 0x90};  // SHUNT_CAL (correct!)
 
@@ -442,7 +383,6 @@ void voltage_current_measurement_site_on(void)
 
     /* Send raw or converted */
     data_transmit(value);
-    led_turn_off();
 }
 
 
@@ -471,9 +411,7 @@ void voltage_current_measurement_reset_site_2(void)
 
 void turn_off_all(void)
 {
-    led_turn_on();
     reset_i2c();
-    led_turn_off();
    
 }
 void reset_mcu(void)
@@ -537,50 +475,3 @@ void power_supply_3v3_2_site_1(void)
     ldo_power_on_site_1(write_cmd[1]);
 }
 
-void ramp_supply_2v7_1_site_0(void) {
-  led_turn_on();
-
-  uint8_t write_cmd[3] = {0x08, 0x80, 0x00};
-  uint8_t read_cmd[1] = {0x08};
-
-  uint16_t dac_code;
-
-  /* =====================================================
-     RAMP DAC
-  ===================================================== */
-  for (dac_code = 0x8000; dac_code <= 0x8A3D; dac_code++) {
-    /* ---------------------------------------------
-       SPLIT 16-BIT DAC VALUE
-    --------------------------------------------- */
-
-    write_cmd[1] = (dac_code >> 8) & 0xFF;
-    write_cmd[2] = dac_code & 0xFF;
-
-    /* ---------------------------------------------
-       WRITE + VERIFY
-    --------------------------------------------- */
-
-    return_data = i2c_common(SLAVE_U6_0, write_cmd, 3, read_cmd, 2);
-    opamp_en(SLAVE_U16, 0);
-    /* ---------------------------------------------
-       ERROR CHECK
-    --------------------------------------------- */
-
-    if (return_data == 0xEEEEEEEE) {
-      break;
-    } else if (return_data == 0xFFFFFFFF) {
-      break;
-    } else if (return_data == 0) {
-      break;
-    }
-
-    /* Optional small ramp delay */
-    delay_cycles(1000);
-  }
-
-
-
-  data_transmit(return_data);
-
-  led_turn_off();
-}

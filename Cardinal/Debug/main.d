@@ -1,6 +1,6 @@
 # FIXED
 
-main.o: ../main.c ../headers.h \
+main.o: ../main.c ../command_function.h ../headers.h \
  ti_msp_dl_config.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/msp.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/DeviceFamily.h \
@@ -75,7 +75,8 @@ main.o: ../main.c ../headers.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/I2C_Controller.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/SPI_Interface.h \
  ../variables.h ../i2c_common.h ../mux.h ../adc_spi.h ../switch.h \
- ../command_function.h ../app.h
+ ../app.h
+../command_function.h:
 ../headers.h:
 ti_msp_dl_config.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/msp.h:
@@ -157,5 +158,4 @@ D:/Cardinal_Github/MSPM0G_Library/Include/SPI_Interface.h:
 ../mux.h:
 ../adc_spi.h:
 ../switch.h:
-../command_function.h:
 ../app.h:

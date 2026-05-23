@@ -3,6 +3,7 @@
 #include "headers.h"
 #include "ti/driverlib/m0p/dl_core.h"
 #include "variables.h"
+#include <stdbool.h>
 
 
 /* =======================
@@ -33,20 +34,38 @@ static bool I2C_Wait_With_Timeout(void)
 
     return true;
 }
-
-/* =======================
-   Reset Function
-======================= */
-
 static void I2C_Reset_Peripheral(void)
 {
-    DL_I2C_reset(I2C_0_INST);
+    /* =========================================
+       Disable I2C IRQ
+    ========================================= */
 
-    DL_I2C_flushControllerTXFIFO(I2C_0_INST);
-    DL_I2C_flushControllerRXFIFO(I2C_0_INST);
+    NVIC_DisableIRQ(I2C_0_INST_INT_IRQN);
+
+    /* =========================================
+       Disable I2C Peripheral
+    ========================================= */
+
+    DL_I2C_disableController(I2C_0_INST);
+
+    SYSCFG_DL_I2C_0_init();
+
+    /* =========================================
+       Clear Driver State
+    ========================================= */
 
     I2C_MCU.state = I2C_CONTROLLER_IDLE;
+
+    I2C_MCU.error = I2C_CONTROLLER_ERROR_NONE;
+
+
+    NVIC_ClearPendingIRQ(I2C_0_INST_INT_IRQN);
+
+    NVIC_EnableIRQ(I2C_0_INST_INT_IRQN);
+
 }
+
+
 
 /* =======================
    I2C COMMON FUNCTION
@@ -55,14 +74,14 @@ uint32_t i2c_common(uint8_t slave_address,uint8_t *write_command,uint8_t write_c
 {
     uint32_t result = 0;
 
-      I2C_Reset_Peripheral();
+   I2C_Reset_Peripheral();
 
     /* -------- BUSY CHECK -------- */
     if (I2C_MCU.state != I2C_CONTROLLER_IDLE)
     {
         return 0xFFFFFFFF;  // BUSY ERROR
     }
-     
+
     /* -------- WRITE -------- */
     if (write_cmd_len > 0 && write_command != NULL)
     {
@@ -73,7 +92,7 @@ uint32_t i2c_common(uint8_t slave_address,uint8_t *write_command,uint8_t write_c
 
         if (!I2C_Wait_With_Timeout())
             return 0xEEEEEEEE; // TIMEOUT
-        delay_cycles(160000);
+        delay_cycles(8000);
     }
 
     /* -------- READ -------- */
@@ -95,7 +114,7 @@ uint32_t i2c_common(uint8_t slave_address,uint8_t *write_command,uint8_t write_c
 
         if (!I2C_Wait_With_Timeout())
             return 0xEEEEEEEE;
-        delay_cycles(160000);
+        delay_cycles(8000);
     }
 
     /* -------- WRITE + VERIFY -------- */

@@ -197,7 +197,8 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
 
     DL_GPIO_initDigitalOutput(Relay_EN_RELAY_EN_2_IOMUX);
 
-    DL_GPIO_clearPins(GPIOA, MUX1_ADC_MUX1_S0_PIN |
+    DL_GPIO_clearPins(GPIOA, LED_LED_PIN_PIN |
+		MUX1_ADC_MUX1_S0_PIN |
 		MUX2_ADC_MUX1_S7_PIN |
 		MUX3_ADC_MUX2_S0_PIN |
 		MUX3_ADC_MUX2_S1_PIN |
@@ -216,7 +217,8 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
 		MUX3_ADC_MUX_EN_BAR_2_PIN |
 		MUX4_ADC_MUX_EN_BAR_3_PIN |
 		Relay_EN_RELAY_EN_0_PIN);
-    DL_GPIO_enableOutput(GPIOA, MUX1_ADC_MUX_EN_BAR_0_PIN |
+    DL_GPIO_enableOutput(GPIOA, LED_LED_PIN_PIN |
+		MUX1_ADC_MUX_EN_BAR_0_PIN |
 		MUX1_ADC_MUX1_S0_PIN |
 		MUX2_ADC_MUX_EN_BAR_1_PIN |
 		MUX2_ADC_MUX1_S7_PIN |
@@ -242,10 +244,8 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
 		MUX2_ADC_MUX1_S5_PIN |
 		MUX2_ADC_MUX1_S6_PIN |
 		MUX4_ADC_MUX2_S6_PIN);
-    DL_GPIO_setPins(GPIOB, LED_LED_PIN_PIN |
-		Chipselect_bar_Chipselect_bar_0_PIN);
-    DL_GPIO_enableOutput(GPIOB, LED_LED_PIN_PIN |
-		Chipselect_bar_Chipselect_bar_0_PIN |
+    DL_GPIO_setPins(GPIOB, Chipselect_bar_Chipselect_bar_0_PIN);
+    DL_GPIO_enableOutput(GPIOB, Chipselect_bar_Chipselect_bar_0_PIN |
 		MUX1_ADC_MUX1_S1_PIN |
 		MUX1_ADC_MUX1_S2_PIN |
 		MUX1_ADC_MUX1_S3_PIN |

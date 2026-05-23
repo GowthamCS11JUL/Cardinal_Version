@@ -92,7 +92,6 @@ void turn_off_all(void);
 void power_supply_3v3_2_site_1(void);
 void ldo_power_on_site_1(uint8_t value);
 void ldo_power_off_site_1(void);
-void ramp_supply_2v7_1_site_0(void);
 
 //LED
 void led_init(void);

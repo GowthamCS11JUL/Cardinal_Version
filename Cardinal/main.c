@@ -30,6 +30,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
  
+#include "command_function.h"
 #include "headers.h"
 
 
@@ -39,7 +40,9 @@ int main(void)
 {
     SYSCFG_DL_init();
     app_init();
+
     while (1) {
+        
         usb_fsm(&USB_DATA);
         
 

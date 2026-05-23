@@ -1,25 +1,22 @@
 {
   "folders": [
     {
-      "path": "file:///d%3A/CARDINAL%20LED-TEST%20FIXTURE"
-    },
-    {
-      "path": "file:///c%3A/Users/Gowtham%20CS/Downloads/MSPM0G_Library/MSPM0G_Library"
+      "path": "file:///d%3A/Cardinal_Github"
     }
   ],
-"settings": {},
-"launch": {
+  "settings": {},
+  "launch": {
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "Cardinal",
-            "type": "ccs-debug",
-            "request": "launch",
-            "projectInfo": {
-                "name": "Cardinal",
-                "resourceId": "/Cardinal"
-            }
+      {
+        "name": "Cardinal",
+        "type": "ccs-debug",
+        "request": "launch",
+        "projectInfo": {
+          "name": "Cardinal",
+          "resourceId": "/Cardinal"
         }
+      }
     ]
-}
+  }
 }

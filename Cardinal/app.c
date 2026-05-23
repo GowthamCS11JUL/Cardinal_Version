@@ -7,15 +7,16 @@
 
 void app_init()
 {
+led_timer_init();
 usb_init();
 cmd_data_setup();
 i2c_init();
 spi_init();
-led_timer_init();
 mux_init_all();
 // switch_all_off();
 led_init();
 reset_i2c();
+led_turn_on();
 
 }
 
@@ -47,7 +48,7 @@ void cmd_data_setup()
    usb_cmd_data_setup(&USB_DATA,21,"Reset","OK",reset_mcu);
    usb_cmd_data_setup(&USB_DATA,22,"Ibat_Power_Off_1","OK", voltage_current_measurement_site_on_1);
    usb_cmd_data_setup(&USB_DATA,23,"Power_supply_3.3V_On_1_1","OK", power_supply_3v3_2_site_1);
-   usb_cmd_data_setup(&USB_DATA,24,"Rampup_supply_2.7V_On","OK",ramp_supply_2v7_1_site_0);
+
    
 }
 
