@@ -1,0 +1,16 @@
+"./adc_spi.o"
+"./app.o"
+"./command_function.o"
+"./delay_timer.o"
+"./i2c.o"
+"./i2c_common.o"
+"./main.o"
+"./ti_msp_dl_config.o"
+"./startup_mspm0g110x_ticlang.o"
+"./mux.o"
+"./switch.o"
+"./usb.o"
+-l"./device_linker.cmd"
+-ldevice.cmd.genlibs
+-llibc.a
+-lMSPM0G_Library.lib
