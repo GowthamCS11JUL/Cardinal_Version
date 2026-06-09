@@ -77,9 +77,9 @@ extern "C" {
 
 
 /* Defines for TIMER_0 */
-#define TIMER_0_INST                                                     (TIMA0)
-#define TIMER_0_INST_IRQHandler                                 TIMA0_IRQHandler
-#define TIMER_0_INST_INT_IRQN                                   (TIMA0_INT_IRQn)
+#define TIMER_0_INST                                                     (TIMG0)
+#define TIMER_0_INST_IRQHandler                                 TIMG0_IRQHandler
+#define TIMER_0_INST_INT_IRQN                                   (TIMG0_INT_IRQn)
 #define TIMER_0_INST_LOAD_VALUE                                             (0U)
 /* Defines for TIMER_2 */
 #define TIMER_2_INST                                                     (TIMG7)
@@ -151,117 +151,123 @@ extern "C" {
 /* Port definition for Pin Group LED */
 #define LED_PORT                                                         (GPIOA)
 
-/* Defines for LED_PIN: GPIOA.14 with pinCMx 36 on package pin 7 */
+/* Defines for LED_PIN: GPIOA.14 with pinCMx 36 on package pin 29 */
 #define LED_LED_PIN_PIN                                         (DL_GPIO_PIN_14)
 #define LED_LED_PIN_IOMUX                                        (IOMUX_PINCM36)
 /* Port definition for Pin Group Chipselect_bar */
 #define Chipselect_bar_PORT                                              (GPIOB)
 
-/* Defines for Chipselect_bar_0: GPIOB.20 with pinCMx 48 on package pin 19 */
+/* Defines for Chipselect_bar_0: GPIOB.20 with pinCMx 48 on package pin 41 */
 #define Chipselect_bar_Chipselect_bar_0_PIN                     (DL_GPIO_PIN_20)
 #define Chipselect_bar_Chipselect_bar_0_IOMUX                    (IOMUX_PINCM48)
-/* Defines for ADC_MUX_EN_BAR_0: GPIOA.2 with pinCMx 7 on package pin 42 */
+/* Defines for ADC_MUX_EN_BAR_0: GPIOA.2 with pinCMx 7 on package pin 8 */
 #define MUX1_ADC_MUX_EN_BAR_0_PORT                                       (GPIOA)
 #define MUX1_ADC_MUX_EN_BAR_0_PIN                                (DL_GPIO_PIN_2)
 #define MUX1_ADC_MUX_EN_BAR_0_IOMUX                               (IOMUX_PINCM7)
-/* Defines for ADC_MUX1_S0: GPIOA.9 with pinCMx 20 on package pin 55 */
+/* Defines for ADC_MUX1_S0: GPIOA.9 with pinCMx 20 on package pin 17 */
 #define MUX1_ADC_MUX1_S0_PORT                                            (GPIOA)
 #define MUX1_ADC_MUX1_S0_PIN                                     (DL_GPIO_PIN_9)
 #define MUX1_ADC_MUX1_S0_IOMUX                                   (IOMUX_PINCM20)
-/* Defines for ADC_MUX1_S1: GPIOB.6 with pinCMx 23 on package pin 58 */
+/* Defines for ADC_MUX1_S1: GPIOB.6 with pinCMx 23 on package pin 20 */
 #define MUX1_ADC_MUX1_S1_PORT                                            (GPIOB)
 #define MUX1_ADC_MUX1_S1_PIN                                     (DL_GPIO_PIN_6)
 #define MUX1_ADC_MUX1_S1_IOMUX                                   (IOMUX_PINCM23)
-/* Defines for ADC_MUX1_S2: GPIOB.8 with pinCMx 25 on package pin 60 */
+/* Defines for ADC_MUX1_S2: GPIOB.8 with pinCMx 25 on package pin 22 */
 #define MUX1_ADC_MUX1_S2_PORT                                            (GPIOB)
 #define MUX1_ADC_MUX1_S2_PIN                                     (DL_GPIO_PIN_8)
 #define MUX1_ADC_MUX1_S2_IOMUX                                   (IOMUX_PINCM25)
-/* Defines for ADC_MUX1_S3: GPIOB.9 with pinCMx 26 on package pin 61 */
+/* Defines for ADC_MUX1_S3: GPIOB.9 with pinCMx 26 on package pin 23 */
 #define MUX1_ADC_MUX1_S3_PORT                                            (GPIOB)
 #define MUX1_ADC_MUX1_S3_PIN                                     (DL_GPIO_PIN_9)
 #define MUX1_ADC_MUX1_S3_IOMUX                                   (IOMUX_PINCM26)
-/* Defines for ADC_MUX_EN_BAR_1: GPIOA.3 with pinCMx 8 on package pin 43 */
+/* Defines for ADC_MUX_EN_BAR_1: GPIOA.3 with pinCMx 8 on package pin 9 */
 #define MUX2_ADC_MUX_EN_BAR_1_PORT                                       (GPIOA)
 #define MUX2_ADC_MUX_EN_BAR_1_PIN                                (DL_GPIO_PIN_3)
 #define MUX2_ADC_MUX_EN_BAR_1_IOMUX                               (IOMUX_PINCM8)
-/* Defines for ADC_MUX1_S4: GPIOB.14 with pinCMx 31 on package pin 2 */
+/* Defines for ADC_MUX1_S4: GPIOB.14 with pinCMx 31 on package pin 24 */
 #define MUX2_ADC_MUX1_S4_PORT                                            (GPIOB)
 #define MUX2_ADC_MUX1_S4_PIN                                    (DL_GPIO_PIN_14)
 #define MUX2_ADC_MUX1_S4_IOMUX                                   (IOMUX_PINCM31)
-/* Defines for ADC_MUX1_S5: GPIOB.15 with pinCMx 32 on package pin 3 */
+/* Defines for ADC_MUX1_S5: GPIOB.15 with pinCMx 32 on package pin 25 */
 #define MUX2_ADC_MUX1_S5_PORT                                            (GPIOB)
 #define MUX2_ADC_MUX1_S5_PIN                                    (DL_GPIO_PIN_15)
 #define MUX2_ADC_MUX1_S5_IOMUX                                   (IOMUX_PINCM32)
-/* Defines for ADC_MUX1_S6: GPIOB.16 with pinCMx 33 on package pin 4 */
+/* Defines for ADC_MUX1_S6: GPIOB.16 with pinCMx 33 on package pin 26 */
 #define MUX2_ADC_MUX1_S6_PORT                                            (GPIOB)
 #define MUX2_ADC_MUX1_S6_PIN                                    (DL_GPIO_PIN_16)
 #define MUX2_ADC_MUX1_S6_IOMUX                                   (IOMUX_PINCM33)
-/* Defines for ADC_MUX1_S7: GPIOA.12 with pinCMx 34 on package pin 5 */
+/* Defines for ADC_MUX1_S7: GPIOA.12 with pinCMx 34 on package pin 27 */
 #define MUX2_ADC_MUX1_S7_PORT                                            (GPIOA)
 #define MUX2_ADC_MUX1_S7_PIN                                    (DL_GPIO_PIN_12)
 #define MUX2_ADC_MUX1_S7_IOMUX                                   (IOMUX_PINCM34)
 /* Port definition for Pin Group MUX3 */
 #define MUX3_PORT                                                        (GPIOA)
 
-/* Defines for ADC_MUX_EN_BAR_2: GPIOA.7 with pinCMx 14 on package pin 49 */
+/* Defines for ADC_MUX_EN_BAR_2: GPIOA.7 with pinCMx 14 on package pin 13 */
 #define MUX3_ADC_MUX_EN_BAR_2_PIN                                (DL_GPIO_PIN_7)
 #define MUX3_ADC_MUX_EN_BAR_2_IOMUX                              (IOMUX_PINCM14)
-/* Defines for ADC_MUX2_S0: GPIOA.13 with pinCMx 35 on package pin 6 */
+/* Defines for ADC_MUX2_S0: GPIOA.13 with pinCMx 35 on package pin 28 */
 #define MUX3_ADC_MUX2_S0_PIN                                    (DL_GPIO_PIN_13)
 #define MUX3_ADC_MUX2_S0_IOMUX                                   (IOMUX_PINCM35)
-/* Defines for ADC_MUX2_S1: GPIOA.1 with pinCMx 2 on package pin 34 */
+/* Defines for ADC_MUX2_S1: GPIOA.1 with pinCMx 2 on package pin 2 */
 #define MUX3_ADC_MUX2_S1_PIN                                     (DL_GPIO_PIN_1)
 #define MUX3_ADC_MUX2_S1_IOMUX                                    (IOMUX_PINCM2)
-/* Defines for ADC_MUX2_S2: GPIOA.15 with pinCMx 37 on package pin 8 */
+/* Defines for ADC_MUX2_S2: GPIOA.15 with pinCMx 37 on package pin 30 */
 #define MUX3_ADC_MUX2_S2_PIN                                    (DL_GPIO_PIN_15)
 #define MUX3_ADC_MUX2_S2_IOMUX                                   (IOMUX_PINCM37)
-/* Defines for ADC_MUX2_S3: GPIOA.16 with pinCMx 38 on package pin 9 */
+/* Defines for ADC_MUX2_S3: GPIOA.16 with pinCMx 38 on package pin 31 */
 #define MUX3_ADC_MUX2_S3_PIN                                    (DL_GPIO_PIN_16)
 #define MUX3_ADC_MUX2_S3_IOMUX                                   (IOMUX_PINCM38)
-/* Defines for ADC_MUX_EN_BAR_3: GPIOA.8 with pinCMx 19 on package pin 54 */
+/* Defines for ADC_MUX_EN_BAR_3: GPIOA.8 with pinCMx 19 on package pin 16 */
 #define MUX4_ADC_MUX_EN_BAR_3_PORT                                       (GPIOA)
 #define MUX4_ADC_MUX_EN_BAR_3_PIN                                (DL_GPIO_PIN_8)
 #define MUX4_ADC_MUX_EN_BAR_3_IOMUX                              (IOMUX_PINCM19)
-/* Defines for ADC_MUX2_S4: GPIOA.21 with pinCMx 46 on package pin 17 */
+/* Defines for ADC_MUX2_S4: GPIOA.21 with pinCMx 46 on package pin 39 */
 #define MUX4_ADC_MUX2_S4_PORT                                            (GPIOA)
 #define MUX4_ADC_MUX2_S4_PIN                                    (DL_GPIO_PIN_21)
 #define MUX4_ADC_MUX2_S4_IOMUX                                   (IOMUX_PINCM46)
-/* Defines for ADC_MUX2_S5: GPIOA.22 with pinCMx 47 on package pin 18 */
+/* Defines for ADC_MUX2_S5: GPIOA.22 with pinCMx 47 on package pin 40 */
 #define MUX4_ADC_MUX2_S5_PORT                                            (GPIOA)
 #define MUX4_ADC_MUX2_S5_PIN                                    (DL_GPIO_PIN_22)
 #define MUX4_ADC_MUX2_S5_IOMUX                                   (IOMUX_PINCM47)
-/* Defines for ADC_MUX2_S6: GPIOB.24 with pinCMx 52 on package pin 23 */
+/* Defines for ADC_MUX2_S6: GPIOB.24 with pinCMx 52 on package pin 42 */
 #define MUX4_ADC_MUX2_S6_PORT                                            (GPIOB)
 #define MUX4_ADC_MUX2_S6_PIN                                    (DL_GPIO_PIN_24)
 #define MUX4_ADC_MUX2_S6_IOMUX                                   (IOMUX_PINCM52)
-/* Defines for ADC_MUX2_S7: GPIOA.23 with pinCMx 53 on package pin 24 */
+/* Defines for ADC_MUX2_S7: GPIOA.23 with pinCMx 53 on package pin 43 */
 #define MUX4_ADC_MUX2_S7_PORT                                            (GPIOA)
 #define MUX4_ADC_MUX2_S7_PIN                                    (DL_GPIO_PIN_23)
 #define MUX4_ADC_MUX2_S7_IOMUX                                   (IOMUX_PINCM53)
 /* Port definition for Pin Group Switch_EN */
 #define Switch_EN_PORT                                                   (GPIOA)
 
-/* Defines for SWITCH_EN_0: GPIOA.4 with pinCMx 9 on package pin 44 */
+/* Defines for SWITCH_EN_0: GPIOA.4 with pinCMx 9 on package pin 10 */
 #define Switch_EN_SWITCH_EN_0_PIN                                (DL_GPIO_PIN_4)
 #define Switch_EN_SWITCH_EN_0_IOMUX                               (IOMUX_PINCM9)
-/* Defines for SWITCH_EN_1: GPIOA.5 with pinCMx 10 on package pin 45 */
+/* Defines for SWITCH_EN_1: GPIOA.5 with pinCMx 10 on package pin 11 */
 #define Switch_EN_SWITCH_EN_1_PIN                                (DL_GPIO_PIN_5)
 #define Switch_EN_SWITCH_EN_1_IOMUX                              (IOMUX_PINCM10)
-/* Defines for SWITCH_EN_2: GPIOA.6 with pinCMx 11 on package pin 46 */
+/* Defines for SWITCH_EN_2: GPIOA.6 with pinCMx 11 on package pin 12 */
 #define Switch_EN_SWITCH_EN_2_PIN                                (DL_GPIO_PIN_6)
 #define Switch_EN_SWITCH_EN_2_IOMUX                              (IOMUX_PINCM11)
 /* Port definition for Pin Group Relay_EN */
 #define Relay_EN_PORT                                                    (GPIOA)
 
-/* Defines for RELAY_EN_1: GPIOA.27 with pinCMx 60 on package pin 31 */
+/* Defines for RELAY_EN_1: GPIOA.27 with pinCMx 60 on package pin 47 */
 #define Relay_EN_RELAY_EN_1_PIN                                 (DL_GPIO_PIN_27)
 #define Relay_EN_RELAY_EN_1_IOMUX                                (IOMUX_PINCM60)
-/* Defines for RELAY_EN_0: GPIOA.28 with pinCMx 3 on package pin 35 */
+/* Defines for RELAY_EN_0: GPIOA.28 with pinCMx 3 on package pin 3 */
 #define Relay_EN_RELAY_EN_0_PIN                                 (DL_GPIO_PIN_28)
 #define Relay_EN_RELAY_EN_0_IOMUX                                 (IOMUX_PINCM3)
-/* Defines for RELAY_EN_2: GPIOA.24 with pinCMx 54 on package pin 25 */
+/* Defines for RELAY_EN_2: GPIOA.24 with pinCMx 54 on package pin 44 */
 #define Relay_EN_RELAY_EN_2_PIN                                 (DL_GPIO_PIN_24)
 #define Relay_EN_RELAY_EN_2_IOMUX                                (IOMUX_PINCM54)
+
+
+/* Defines for WWDT */
+#define WWDT0_INST                                                       (WWDT0)
+#define WWDT0_INT_IRQN                                          (WWDT0_INT_IRQn)
+
 
 /* clang-format on */
 
@@ -275,6 +281,7 @@ void SYSCFG_DL_I2C_0_init(void);
 void SYSCFG_DL_UART_0_init(void);
 void SYSCFG_DL_SPI_0_init(void);
 
+void SYSCFG_DL_WWDT0_init(void);
 
 bool SYSCFG_DL_saveConfiguration(void);
 bool SYSCFG_DL_restoreConfiguration(void);

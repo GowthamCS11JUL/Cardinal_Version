@@ -32,19 +32,26 @@
  
 #include "command_function.h"
 #include "headers.h"
+#include "ti/driverlib/dl_wwdt.h"
+#include "ti/driverlib/m0p/dl_core.h"
 
+
+static inline void watchdog_kick(void)
+{
+    DL_WWDT_restart(WWDT0);
+}
 
 
 
 int main(void)
 {
     SYSCFG_DL_init();
+    DL_WWDT_setCoreHaltBehavior(WWDT0, DL_WWDT_CORE_HALT_STOP);
     app_init();
-
-    while (1) {
-        
+    
+    while (1) { 
         usb_fsm(&USB_DATA);
-        
+        watchdog_kick();      
 
 }
 }

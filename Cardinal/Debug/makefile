@@ -143,7 +143,7 @@ all: $(OBJS) $(GEN_CMDS)
 	@$(MAKE) --no-print-directory -Onone "Cardinal.out"
 
 dependents:
-	-cd D:/Cardinal_Github/MSPM0G_Library/Debug && $(MAKE) clean all
+	-cd D:/Cardinal_Github/MSPM0G_Library/Debug && $(MAKE) all
 
 # Tool invocations
 Cardinal.out: $(OBJS) $(GEN_CMDS) D:/Cardinal_Github/MSPM0G_Library/Debug/MSPM0G_Library.lib

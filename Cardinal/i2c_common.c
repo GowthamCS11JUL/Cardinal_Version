@@ -1,9 +1,6 @@
 
-
 #include "headers.h"
-#include "ti/driverlib/m0p/dl_core.h"
 #include "variables.h"
-#include <stdbool.h>
 
 
 /* =======================
@@ -18,7 +15,7 @@ static uint8_t tx_buffer[16];
 static bool I2C_Wait_With_Timeout(void)
 {
     uint32_t start = Delay_Timer_Get(&delay);
-    uint32_t timeout_us = 50000;  // 50 ms
+    uint32_t timeout_us = 500000;  // 500 ms
 
     while (!I2C_Controller_Transaction_Done(&I2C_MCU))
     {
@@ -34,38 +31,6 @@ static bool I2C_Wait_With_Timeout(void)
 
     return true;
 }
-static void I2C_Reset_Peripheral(void)
-{
-    /* =========================================
-       Disable I2C IRQ
-    ========================================= */
-
-    NVIC_DisableIRQ(I2C_0_INST_INT_IRQN);
-
-    /* =========================================
-       Disable I2C Peripheral
-    ========================================= */
-
-    DL_I2C_disableController(I2C_0_INST);
-
-    SYSCFG_DL_I2C_0_init();
-
-    /* =========================================
-       Clear Driver State
-    ========================================= */
-
-    I2C_MCU.state = I2C_CONTROLLER_IDLE;
-
-    I2C_MCU.error = I2C_CONTROLLER_ERROR_NONE;
-
-
-    NVIC_ClearPendingIRQ(I2C_0_INST_INT_IRQN);
-
-    NVIC_EnableIRQ(I2C_0_INST_INT_IRQN);
-
-}
-
-
 
 /* =======================
    I2C COMMON FUNCTION
@@ -73,8 +38,6 @@ static void I2C_Reset_Peripheral(void)
 uint32_t i2c_common(uint8_t slave_address,uint8_t *write_command,uint8_t write_cmd_len,uint8_t *read_command,uint8_t read_cmd_len)
 {
     uint32_t result = 0;
-
-   I2C_Reset_Peripheral();
 
     /* -------- BUSY CHECK -------- */
     if (I2C_MCU.state != I2C_CONTROLLER_IDLE)
@@ -92,7 +55,6 @@ uint32_t i2c_common(uint8_t slave_address,uint8_t *write_command,uint8_t write_c
 
         if (!I2C_Wait_With_Timeout())
             return 0xEEEEEEEE; // TIMEOUT
-        delay_cycles(8000);
     }
 
     /* -------- READ -------- */
@@ -114,7 +76,6 @@ uint32_t i2c_common(uint8_t slave_address,uint8_t *write_command,uint8_t write_c
 
         if (!I2C_Wait_With_Timeout())
             return 0xEEEEEEEE;
-        delay_cycles(8000);
     }
 
     /* -------- WRITE + VERIFY -------- */

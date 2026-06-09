@@ -102,4 +102,8 @@ void led_turn_off(void);
 
 void reset_mcu(void);
 
+void set_usb_response(const char *msg);
+void set_voltage_handler(void);
+void apply_voltage(uint16_t mv);
+
 #endif /* COMMAND_FUNCTION_H */

@@ -2,14 +2,10 @@
 #include "ti/devices/msp/m0p/mspm0g110x.h"
 #include "variables.h"
 
-
-void led_timer_init()
-{
-Delay_Timer_Initialize(&delay,TIMG7,7,32000000);  
+void led_timer_init(void) {
+  Delay_Timer_Initialize(&delay, TIMG7, 7, 32000000);
+  Delay_Timer_Start(&delay);
 }
-
-
-
 
 void led_blink(void)
 {
@@ -29,7 +25,7 @@ void led_blink(void)
         uint32_t currentTime = Delay_Timer_Get(&delay);
 
         /* 500000 us = 500 ms */
-        if ((currentTime - lastToggle) >= 5000000)
+        if ((currentTime - lastToggle) >= 500000)
         {
             lastToggle = currentTime;
 

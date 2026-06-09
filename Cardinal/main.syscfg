@@ -1,7 +1,7 @@
 /**
  * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
  * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
- * @cliArgs --device "MSPM0G110X" --package "LQFP-64(PM)" --part "Default" --product "mspm0_sdk@2.00.00.03"
+ * @cliArgs --device "MSPM0G110X" --package "LQFP-48(PT)" --part "Default" --product "mspm0_sdk@2.00.00.03"
  * @versions {"tool":"1.19.0+3426"}
  */
 
@@ -27,6 +27,8 @@ const TIMER1        = TIMER.addInstance();
 const TIMER2        = TIMER.addInstance();
 const UART          = scripting.addModule("/ti/driverlib/UART", {}, false);
 const UART1         = UART.addInstance();
+const WWDT          = scripting.addModule("/ti/driverlib/WWDT", {}, false);
+const WWDT1         = WWDT.addInstance();
 const ProjectConfig = scripting.addModule("/ti/project_config/ProjectConfig");
 
 /**
@@ -138,9 +140,12 @@ SPI1.enableDMAEvent2            = false;
 SPI1.dataSize                   = 16;
 SPI1.enabledInterrupts          = ["IDLE","RX","TX"];
 SPI1.chipSelect                 = ["2"];
+SPI1.overrideRetention          = true;
+SPI1.peripheral.$assign         = "SPI0";
 SPI1.peripheral.sclkPin.$assign = "PB18";
 SPI1.peripheral.mosiPin.$assign = "PB17";
 SPI1.peripheral.misoPin.$assign = "PB19";
+SPI1.peripheral.cs2Pin.$assign  = "PB7";
 SPI1.sclkPinConfig.$name        = "ti_driverlib_gpio_GPIOPinGeneric4";
 SPI1.mosiPinConfig.$name        = "ti_driverlib_gpio_GPIOPinGeneric5";
 SPI1.misoPinConfig.$name        = "ti_driverlib_gpio_GPIOPinGeneric6";
@@ -152,14 +157,16 @@ SYSCTL.peripheral.$assign    = "SYSCTL";
 TIMER1.$name              = "TIMER_0";
 TIMER1.interrupts         = ["LOAD"];
 TIMER1.timerMode          = "ONE_SHOT_UP";
-TIMER1.peripheral.$assign = "TIMA0";
+TIMER1.peripheral.$assign = "TIMG0";
 
-TIMER2.$name              = "TIMER_2";
-TIMER2.timerClkPrescale   = 32;
-TIMER2.interrupts         = ["ZERO"];
-TIMER2.timerMode          = "PERIODIC_UP";
-TIMER2.timerPeriod        = "65.535 ms";
-TIMER2.peripheral.$assign = "TIMG7";
+TIMER2.$name               = "TIMER_2";
+TIMER2.timerClkPrescale    = 32;
+TIMER2.interrupts          = ["ZERO"];
+TIMER2.timerMode           = "PERIODIC_UP";
+TIMER2.timerPeriod         = "65.535 ms";
+TIMER2.retentionRestoreCnt = true;
+TIMER2.overrideRetention   = true;
+TIMER2.peripheral.$assign  = "TIMG7";
 
 UART1.$name                    = "UART_0";
 UART1.txFifoThreshold          = "DL_UART_TX_FIFO_LEVEL_ONE_ENTRY";
@@ -173,13 +180,11 @@ UART1.peripheral.txPin.$assign = "PA10";
 UART1.txPinConfig.$name        = "ti_driverlib_gpio_GPIOPinGeneric0";
 UART1.rxPinConfig.$name        = "ti_driverlib_gpio_GPIOPinGeneric1";
 
+WWDT1.$name              = "WWDT0";
+WWDT1.periodCount        = "15";
+WWDT1.clockDivider       = "2";
+WWDT1.interruptPriority  = "0";
+WWDT1.peripheral.$assign = "WWDT0";
+
 ProjectConfig.deviceSpin = "MSPM0G1107";
 scripting.suppress("Migrating requires going through the Switch Board or Device menu in the Device View section\\.", ProjectConfig, "deviceSpin");
-
-/**
- * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
- * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
- * re-solve from scratch.
- */
-SPI1.peripheral.$suggestSolution        = "SPI0";
-SPI1.peripheral.cs2Pin.$suggestSolution = "PB7";

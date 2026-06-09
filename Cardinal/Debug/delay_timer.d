@@ -1,7 +1,8 @@
 # FIXED
 
-delay_timer.o: ../delay_timer.c ../headers.h \
- ti_msp_dl_config.h \
+delay_timer.o: ../delay_timer.c ../delay_timer.h \
+ C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/driverlib.h \
+ C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_adc12.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/msp.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/DeviceFamily.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/m0p/mspm0g110x.h \
@@ -25,8 +26,6 @@ delay_timer.o: ../delay_timer.c ../headers.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/peripherals/m0p/hw_debugss.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/peripherals/m0p/hw_sysctl.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h \
- C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/driverlib.h \
- C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_adc12.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_common.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_aes.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_aesadv.h \
@@ -66,18 +65,10 @@ delay_timer.o: ../delay_timer.c ../headers.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_vref.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_wwdt.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/m0p/dl_interrupt.h \
- C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/m0p/dl_systick.h \
- D:/Cardinal_Github/MSPM0G_Library/Include/UART_Interface.h \
- D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Timeout.h \
- D:/Cardinal_Github/MSPM0G_Library/Include/UART_Target.h \
- D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Profiler.h ../usb.h \
- ../i2c.h ../delay_timer.h \
- D:/Cardinal_Github/MSPM0G_Library/Include/I2C_Controller.h \
- D:/Cardinal_Github/MSPM0G_Library/Include/SPI_Interface.h \
- ../variables.h ../i2c_common.h ../mux.h ../adc_spi.h ../switch.h \
- ../command_function.h ../app.h
-../headers.h:
-ti_msp_dl_config.h:
+ C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/m0p/dl_systick.h
+../delay_timer.h:
+C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/driverlib.h:
+C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_adc12.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/msp.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/DeviceFamily.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/m0p/mspm0g110x.h:
@@ -101,8 +92,6 @@ C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/peripherals/m0p/hw_cpuss.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/peripherals/m0p/hw_debugss.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/peripherals/m0p/hw_sysctl.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h:
-C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/driverlib.h:
-C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_adc12.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_common.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_aes.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_aesadv.h:
@@ -143,19 +132,3 @@ C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_vref.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_wwdt.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/m0p/dl_interrupt.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/m0p/dl_systick.h:
-D:/Cardinal_Github/MSPM0G_Library/Include/UART_Interface.h:
-D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Timeout.h:
-D:/Cardinal_Github/MSPM0G_Library/Include/UART_Target.h:
-D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Profiler.h:
-../usb.h:
-../i2c.h:
-../delay_timer.h:
-D:/Cardinal_Github/MSPM0G_Library/Include/I2C_Controller.h:
-D:/Cardinal_Github/MSPM0G_Library/Include/SPI_Interface.h:
-../variables.h:
-../i2c_common.h:
-../mux.h:
-../adc_spi.h:
-../switch.h:
-../command_function.h:
-../app.h:

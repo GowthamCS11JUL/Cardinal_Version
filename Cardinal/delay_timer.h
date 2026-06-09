@@ -1,24 +1,32 @@
 #ifndef DELAY_TIMER_H_
 #define DELAY_TIMER_H_
 
+#include <stdint.h>
+#include <ti/driverlib/driverlib.h>
 
-typedef struct
-{
-    GPTIMER_Regs *timer;
-    uint8_t instanceNum;
+/* ------------------------------------------------ */
+/* DELAY TIMER STRUCT                               */
+/* ------------------------------------------------ */
 
-    DL_Timer_ClockConfig  clkConfig;
-    DL_TimerG_TimerConfig config;
+typedef struct {
+  GPTIMER_Regs *timer;
 
-    volatile uint32_t overflowCount;
+  uint8_t instanceNum;
+
+  volatile uint32_t overflowCount;
+
+  DL_TimerG_ClockConfig clkConfig;
+
+  DL_TimerG_TimerConfig config;
 
 } Delay_Timer;
 
+/* ------------------------------------------------ */
+/* FUNCTIONS                                        */
+/* ------------------------------------------------ */
 
-void Delay_Timer_Initialize(Delay_Timer *thisTimer,
-                            GPTIMER_Regs *thisTimerRegs,
-                            uint8_t thisInstance,
-                            uint32_t clockFrequency);
+void Delay_Timer_Initialize(Delay_Timer *thisTimer, GPTIMER_Regs *thisTimerRegs,
+                            uint8_t thisInstance, uint32_t clockFrequency);
 
 void Delay_Timer_Start(Delay_Timer *thisTimer);
 
