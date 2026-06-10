@@ -70,7 +70,7 @@ usb.o: ../usb.c ../usb.h ../headers.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/UART_Interface.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Timeout.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/UART_Target.h \
- D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Profiler.h ../i2c.h \
+ D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Profiler.h \
  ../delay_timer.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/I2C_Controller.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/SPI_Interface.h \
@@ -148,7 +148,6 @@ D:/Cardinal_Github/MSPM0G_Library/Include/UART_Interface.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Timeout.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/UART_Target.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Profiler.h:
-../i2c.h:
 ../delay_timer.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/I2C_Controller.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/SPI_Interface.h:

@@ -13,7 +13,6 @@ C_SRCS += \
 ../app.c \
 ../command_function.c \
 ../delay_timer.c \
-../i2c.c \
 ../i2c_common.c \
 ../main.c \
 ./ti_msp_dl_config.c \
@@ -35,7 +34,6 @@ C_DEPS += \
 ./app.d \
 ./command_function.d \
 ./delay_timer.d \
-./i2c.d \
 ./i2c_common.d \
 ./main.d \
 ./ti_msp_dl_config.d \
@@ -52,7 +50,6 @@ OBJS += \
 ./app.o \
 ./command_function.o \
 ./delay_timer.o \
-./i2c.o \
 ./i2c_common.o \
 ./main.o \
 ./ti_msp_dl_config.o \
@@ -71,7 +68,6 @@ OBJS__QUOTED += \
 "app.o" \
 "command_function.o" \
 "delay_timer.o" \
-"i2c.o" \
 "i2c_common.o" \
 "main.o" \
 "ti_msp_dl_config.o" \
@@ -90,7 +86,6 @@ C_DEPS__QUOTED += \
 "app.d" \
 "command_function.d" \
 "delay_timer.d" \
-"i2c.d" \
 "i2c_common.d" \
 "main.d" \
 "ti_msp_dl_config.d" \
@@ -109,7 +104,6 @@ C_SRCS__QUOTED += \
 "../app.c" \
 "../command_function.c" \
 "../delay_timer.c" \
-"../i2c.c" \
 "../i2c_common.c" \
 "../main.c" \
 "./ti_msp_dl_config.c" \

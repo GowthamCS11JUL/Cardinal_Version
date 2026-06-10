@@ -14,7 +14,6 @@ ORDERED_OBJS += \
 "./app.o" \
 "./command_function.o" \
 "./delay_timer.o" \
-"./i2c.o" \
 "./i2c_common.o" \
 "./main.o" \
 "./ti_msp_dl_config.o" \
@@ -143,7 +142,7 @@ all: $(OBJS) $(GEN_CMDS)
 	@$(MAKE) --no-print-directory -Onone "Cardinal.out"
 
 dependents:
-	-cd D:/Cardinal_Github/MSPM0G_Library/Debug && $(MAKE) all
+	-cd D:/Cardinal_Github/MSPM0G_Library/Debug && $(MAKE) clean all
 
 # Tool invocations
 Cardinal.out: $(OBJS) $(GEN_CMDS) D:/Cardinal_Github/MSPM0G_Library/Debug/MSPM0G_Library.lib
@@ -156,8 +155,8 @@ Cardinal.out: $(OBJS) $(GEN_CMDS) D:/Cardinal_Github/MSPM0G_Library/Debug/MSPM0G
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "adc_spi.o" "app.o" "command_function.o" "delay_timer.o" "i2c.o" "i2c_common.o" "main.o" "ti_msp_dl_config.o" "startup_mspm0g110x_ticlang.o" "mux.o" "switch.o" "usb.o" 
-	-$(RM) "adc_spi.d" "app.d" "command_function.d" "delay_timer.d" "i2c.d" "i2c_common.d" "main.d" "ti_msp_dl_config.d" "startup_mspm0g110x_ticlang.d" "mux.d" "switch.d" "usb.d" 
+	-$(RM) "adc_spi.o" "app.o" "command_function.o" "delay_timer.o" "i2c_common.o" "main.o" "ti_msp_dl_config.o" "startup_mspm0g110x_ticlang.o" "mux.o" "switch.o" "usb.o" 
+	-$(RM) "adc_spi.d" "app.d" "command_function.d" "delay_timer.d" "i2c_common.d" "main.d" "ti_msp_dl_config.d" "startup_mspm0g110x_ticlang.d" "mux.d" "switch.d" "usb.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

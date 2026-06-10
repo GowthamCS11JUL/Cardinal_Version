@@ -1,7 +1,7 @@
 ******************************************************************************
             TI ARM Clang Linker PC v4.0.0                      
 ******************************************************************************
->> Linked Tue Jun  9 10:31:34 2026
+>> Linked Wed Jun 10 12:29:08 2026
 
 OUTPUT FILE NAME:   <Cardinal.out>
 ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 000031e1
@@ -261,7 +261,7 @@ section   page    origin      length       input sections
                   00003a18    00000018     ti_msp_dl_config.o (.text.DL_WWDT_enablePower)
                   00003a30    00000018     ti_msp_dl_config.o (.text.DL_WWDT_reset)
                   00003a48    00000018     main.o (.text.DL_WWDT_setCoreHaltBehavior)
-                  00003a60    00000018     i2c.o (.text.i2c_init)
+                  00003a60    00000018     i2c_common.o (.text.i2c_init)
                   00003a78    00000018     command_function.o (.text.led_init)
                   00003a90    00000018     adc_spi.o (.text.spi_init)
                   00003aa8    00000018     switch.o (.text.switch_0_on)
@@ -421,12 +421,11 @@ MODULE SUMMARY
        mux.o                          1440    0         0      
        app.o                          752     545       0      
        usb.o                          838     0         16     
+       i2c_common.o                   488     0         32     
        delay_timer.o                  504     0         0      
-       i2c_common.o                   464     0         32     
        switch.o                       284     0         0      
        startup_mspm0g110x_ticlang.o   8       192       0      
        main.o                         108     0         0      
-       i2c.o                          24      0         0      
     +--+------------------------------+-------+---------+---------+
        Total:                         9110    826       5212   
                                                                

@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "CCS Debug",
+            "type": "ccs-debug",
+            "request": "launch"
+        },
+        {
+            "name": "Cardinal",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "Cardinal",
+                "resourceId": "/Cardinal/i2c_common.c"
+            }
+        },
+        {
+            "name": "Cardinal (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "Cardinal",
+                "resourceId": "/Cardinal/app.c"
+            }
+        }
+    ]
+}

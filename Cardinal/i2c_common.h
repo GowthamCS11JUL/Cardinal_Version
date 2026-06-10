@@ -1,7 +1,10 @@
 #ifndef I2C_COMMON_H_
 #define I2C_COMMON_H_
 
-// Timer_Profiler i2c_timeout;
+
+
+void i2c_init();
+
 
 static bool I2C_Wait_With_Timeout(void);
 // void com_timeout_init(void);

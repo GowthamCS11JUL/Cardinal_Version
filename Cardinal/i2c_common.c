@@ -2,6 +2,16 @@
 #include "headers.h"
 #include "variables.h"
 
+/* =======================
+   I2C Initialise
+======================= */
+
+void i2c_init()
+{
+   I2C_Controller_Initialize(&I2C_MCU, I2C1, 1);
+
+}
+
 
 /* =======================
    Buffers

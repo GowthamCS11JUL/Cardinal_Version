@@ -2,7 +2,6 @@
 "./app.o"
 "./command_function.o"
 "./delay_timer.o"
-"./i2c.o"
 "./i2c_common.o"
 "./main.o"
 "./ti_msp_dl_config.o"
