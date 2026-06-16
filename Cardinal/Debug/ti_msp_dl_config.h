@@ -160,6 +160,16 @@ extern "C" {
 /* Defines for Chipselect_bar_0: GPIOB.20 with pinCMx 48 on package pin 41 */
 #define Chipselect_bar_Chipselect_bar_0_PIN                     (DL_GPIO_PIN_20)
 #define Chipselect_bar_Chipselect_bar_0_IOMUX                    (IOMUX_PINCM48)
+/* Port definition for Pin Group GPIO_GRP_0 */
+#define GPIO_GRP_0_PORT                                                  (GPIOA)
+
+/* Defines for PIN_0: GPIOA.0 with pinCMx 1 on package pin 1 */
+// pins affected by this interrupt request:["PIN_0"]
+#define GPIO_GRP_0_INT_IRQN                                     (GPIOA_INT_IRQn)
+#define GPIO_GRP_0_INT_IIDX                     (DL_INTERRUPT_GROUP1_IIDX_GPIOA)
+#define GPIO_GRP_0_PIN_0_IIDX                                (DL_GPIO_IIDX_DIO0)
+#define GPIO_GRP_0_PIN_0_PIN                                     (DL_GPIO_PIN_0)
+#define GPIO_GRP_0_PIN_0_IOMUX                                    (IOMUX_PINCM1)
 /* Defines for ADC_MUX_EN_BAR_0: GPIOA.2 with pinCMx 7 on package pin 8 */
 #define MUX1_ADC_MUX_EN_BAR_0_PORT                                       (GPIOA)
 #define MUX1_ADC_MUX_EN_BAR_0_PIN                                (DL_GPIO_PIN_2)

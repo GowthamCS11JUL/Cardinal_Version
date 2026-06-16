@@ -114,6 +114,8 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
 
     DL_GPIO_initDigitalOutput(Chipselect_bar_Chipselect_bar_0_IOMUX);
 
+    DL_GPIO_initDigitalInput(GPIO_GRP_0_PIN_0_IOMUX);
+
     DL_GPIO_initDigitalOutput(MUX1_ADC_MUX_EN_BAR_0_IOMUX);
 
     DL_GPIO_initDigitalOutput(MUX1_ADC_MUX1_S0_IOMUX);
@@ -206,6 +208,9 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
 		Relay_EN_RELAY_EN_1_PIN |
 		Relay_EN_RELAY_EN_0_PIN |
 		Relay_EN_RELAY_EN_2_PIN);
+    DL_GPIO_setLowerPinsPolarity(GPIOA, DL_GPIO_PIN_0_EDGE_RISE);
+    DL_GPIO_clearInterruptStatus(GPIOA, GPIO_GRP_0_PIN_0_PIN);
+    DL_GPIO_enableInterrupt(GPIOA, GPIO_GRP_0_PIN_0_PIN);
     DL_GPIO_clearPins(GPIOB, MUX1_ADC_MUX1_S1_PIN |
 		MUX1_ADC_MUX1_S2_PIN |
 		MUX1_ADC_MUX1_S3_PIN |

@@ -6,7 +6,6 @@
 #include "ti/driverlib/m0p/dl_core.h"
 #include "variables.h"
 
-
 #define MAX_VOLTAGE_MV 5000
 #define PREFIX "SET_VOLTAGE_"
 #define SET_VOLTAGE_PREFIX_LEN 12
@@ -111,10 +110,9 @@ static void read_mux_adc(uint8_t mux1, uint8_t mux2, uint8_t mux3, uint8_t mux4,
     mux_select(MUX_ID_3, mux3);
     mux_select(MUX_ID_4, mux4);
 
-    delay_cycles(64);
-
+    delay_cycles(32000);
     ADC122S625_Read(&spi_adc, 1); // dummy
-    delay_cycles(64);
+    delay_cycles(32000);
 
     out = ADC122S625_Read(&spi_adc, 1);
 
@@ -268,9 +266,14 @@ void led_status_voltage_1_0_site_0(void) {
   read_mux_adc(0x04, 0x00, 0x00, 0x00, 0x01);
   led_turn_off();
 }
-
+//
 void led_status_voltage_2_0_site_0(void) {
   led_turn_on();
+
+  mux_select(MUX_ID_1, 0x03);
+  mux_select(MUX_ID_2, 0x01);
+  delay_cycles(64);
+
   read_mux_adc(0x05, 0x00, 0x00, 0x00, 0x01);
   led_turn_off();
 }
@@ -307,6 +310,7 @@ void switch_voltage_press_site_0(void) {
   while ((Delay_Timer_Get(&delay) - startTime) < 210000UL) {
     __NOP();
   }
+// delay_cycles(800000);
 
   /* Read after stabilization */
 

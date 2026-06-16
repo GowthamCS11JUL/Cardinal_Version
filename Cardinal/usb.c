@@ -57,11 +57,7 @@ void usb_fsm(UART_DATA *param) {
 
         param->cmd_index = 0;
       }
-      // else if(byte=='\0' && param->cmd_buffer[param->cmd_index++]=='\0' )
-      // {
-      //      process_usb_command(param);
-      //     param->cmd_index = 0;
-      // }
+   
     } else {
       if (param->cmd_index < MAX_CMD_LEN - 1) {
         param->cmd_buffer[param->cmd_index++] = byte;
