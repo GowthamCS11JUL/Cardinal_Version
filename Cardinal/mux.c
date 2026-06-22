@@ -7,69 +7,6 @@ void led_timer_init(void) {
   Delay_Timer_Start(&delay);
 }
 
-void led_blink(void)
-{
-    static uint32_t lastToggle = 0;
-    static uint8_t ledState = 0;
-
-    DL_GPIO_initDigitalOutput(IOMUX_PINCM1);
-    DL_GPIO_enableOutput(GPIOA, DL_GPIO_PIN_0);
-    //  DL_GPIO_clearPins(GPIOA, DL_GPIO_PIN_0);
-
-    Delay_Timer_Start(&delay);
-
-    lastToggle = Delay_Timer_Get(&delay);
-
-    while (1)
-    {
-        uint32_t currentTime = Delay_Timer_Get(&delay);
-
-        /* 500000 us = 500 ms */
-        if ((currentTime - lastToggle) >= 500000)
-        {
-            lastToggle = currentTime;
-
-            if (ledState)
-            {
-                DL_GPIO_clearPins(GPIOA, DL_GPIO_PIN_0);
-                ledState = 0;
-            }
-            else
-            {
-                DL_GPIO_setPins(GPIOA, DL_GPIO_PIN_0);
-                ledState = 1;
-            }
-
-            break;  // remove this if continuous blinking required
-        }
-    }
-
-    executing_command->response[0] = 'P';
-    executing_command->response[1] = 'A';
-    executing_command->response[2] = 'S';
-    executing_command->response[3] = 'S';
-    executing_command->resp_len = 4;
-}
-
-void Led_off(void)
-{
-    DL_GPIO_initDigitalOutput(IOMUX_PINCM1);   
-
-    /* Enable output driver for PA0 */
-    DL_GPIO_enableOutput(GPIOA, DL_GPIO_PIN_0);
-
-    /* Start with LED OFF */
-    DL_GPIO_setPins(GPIOA, DL_GPIO_PIN_0);
-
-    executing_command->response[0] = 'P';
-    executing_command->response[1] = 'A';
-    executing_command->response[2] = 'S';
-    executing_command->response[3] = 'S';
-    executing_command->resp_len = 4;
-
-}
-
-
 
 void MUX1_init(void)
 {

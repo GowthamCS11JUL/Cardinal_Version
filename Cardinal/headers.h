@@ -12,6 +12,7 @@
 #include "Timer_Profiler.h"
 #include "usb.h"
 #include "delay_timer.h"
+#include "dynamic_parser.h"
 #include "I2C_Controller.h"
 #include "SPI_Interface.h"
 #include "variables.h"

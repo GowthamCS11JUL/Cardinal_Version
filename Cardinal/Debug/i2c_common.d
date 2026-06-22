@@ -71,7 +71,7 @@ i2c_common.o: ../i2c_common.c ../headers.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Timeout.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/UART_Target.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Profiler.h ../usb.h \
- ../delay_timer.h \
+ ../delay_timer.h ../dynamic_parser.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/I2C_Controller.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/SPI_Interface.h \
  ../variables.h ../i2c_common.h ../mux.h ../adc_spi.h ../switch.h \
@@ -149,6 +149,7 @@ D:/Cardinal_Github/MSPM0G_Library/Include/UART_Target.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Profiler.h:
 ../usb.h:
 ../delay_timer.h:
+../dynamic_parser.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/I2C_Controller.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/SPI_Interface.h:
 ../variables.h:

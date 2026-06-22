@@ -1,6 +1,6 @@
 # FIXED
 
-app.o: ../app.c ../command_function.h ../headers.h \
+app.o: ../app.c ../headers.h \
  ti_msp_dl_config.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/msp.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/DeviceFamily.h \
@@ -71,12 +71,11 @@ app.o: ../app.c ../command_function.h ../headers.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Timeout.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/UART_Target.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Profiler.h ../usb.h \
- ../delay_timer.h \
+ ../delay_timer.h ../dynamic_parser.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/I2C_Controller.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/SPI_Interface.h \
  ../variables.h ../i2c_common.h ../mux.h ../adc_spi.h ../switch.h \
- ../app.h
-../command_function.h:
+ ../command_function.h ../app.h
 ../headers.h:
 ti_msp_dl_config.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/msp.h:
@@ -150,6 +149,7 @@ D:/Cardinal_Github/MSPM0G_Library/Include/UART_Target.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Profiler.h:
 ../usb.h:
 ../delay_timer.h:
+../dynamic_parser.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/I2C_Controller.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/SPI_Interface.h:
 ../variables.h:
@@ -157,4 +157,5 @@ D:/Cardinal_Github/MSPM0G_Library/Include/SPI_Interface.h:
 ../mux.h:
 ../adc_spi.h:
 ../switch.h:
+../command_function.h:
 ../app.h:

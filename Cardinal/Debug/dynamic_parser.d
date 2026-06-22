@@ -1,6 +1,7 @@
 # FIXED
 
-command_function.o: ../command_function.c ../headers.h \
+dynamic_parser.o: ../dynamic_parser.c \
+ D:/Cardinal_Github/Cardinal/headers.h \
  ti_msp_dl_config.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/msp.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/DeviceFamily.h \
@@ -70,13 +71,20 @@ command_function.o: ../command_function.c ../headers.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/UART_Interface.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Timeout.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/UART_Target.h \
- D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Profiler.h ../usb.h \
- ../delay_timer.h ../dynamic_parser.h \
+ D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Profiler.h \
+ D:/Cardinal_Github/Cardinal/usb.h \
+ D:/Cardinal_Github/Cardinal/delay_timer.h \
+ D:/Cardinal_Github/Cardinal/dynamic_parser.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/I2C_Controller.h \
  D:/Cardinal_Github/MSPM0G_Library/Include/SPI_Interface.h \
- ../variables.h ../i2c_common.h ../mux.h ../adc_spi.h ../switch.h \
- ../command_function.h ../app.h
-../headers.h:
+ D:/Cardinal_Github/Cardinal/variables.h \
+ D:/Cardinal_Github/Cardinal/i2c_common.h \
+ D:/Cardinal_Github/Cardinal/mux.h \
+ D:/Cardinal_Github/Cardinal/adc_spi.h \
+ D:/Cardinal_Github/Cardinal/switch.h \
+ D:/Cardinal_Github/Cardinal/command_function.h \
+ D:/Cardinal_Github/Cardinal/app.h
+D:/Cardinal_Github/Cardinal/headers.h:
 ti_msp_dl_config.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/msp.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/DeviceFamily.h:
@@ -147,15 +155,15 @@ D:/Cardinal_Github/MSPM0G_Library/Include/UART_Interface.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Timeout.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/UART_Target.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/Timer_Profiler.h:
-../usb.h:
-../delay_timer.h:
-../dynamic_parser.h:
+D:/Cardinal_Github/Cardinal/usb.h:
+D:/Cardinal_Github/Cardinal/delay_timer.h:
+D:/Cardinal_Github/Cardinal/dynamic_parser.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/I2C_Controller.h:
 D:/Cardinal_Github/MSPM0G_Library/Include/SPI_Interface.h:
-../variables.h:
-../i2c_common.h:
-../mux.h:
-../adc_spi.h:
-../switch.h:
-../command_function.h:
-../app.h:
+D:/Cardinal_Github/Cardinal/variables.h:
+D:/Cardinal_Github/Cardinal/i2c_common.h:
+D:/Cardinal_Github/Cardinal/mux.h:
+D:/Cardinal_Github/Cardinal/adc_spi.h:
+D:/Cardinal_Github/Cardinal/switch.h:
+D:/Cardinal_Github/Cardinal/command_function.h:
+D:/Cardinal_Github/Cardinal/app.h:
